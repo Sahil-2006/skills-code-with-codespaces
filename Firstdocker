@@ -1,0 +1,33 @@
+.devcontainer/devcontainer.json
+{
+  // Name of the configuration
+  "name": "Node.js & JavaScript Dev Environment",
+
+  // Use the Node.js development container image
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+
+  // Set the default user in the Codespace container
+  "remoteUser": "node",
+
+  // Install and configure extensions for JavaScript/Node.js development
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint", // Linting with ESLint
+        "esbenp.prettier-vscode", // Code formatting with Prettier
+        "ms-vscode.vscode-typescript-next" // TypeScript support
+      ]
+    }
+  },
+
+  // Automatically install Node.js dependencies
+  "postCreateCommand": "npm install",
+
+  // Forward ports for local development (e.g., Node.js server)
+  "forwardPorts": [3000],
+
+  // Set environment variables (optional)
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  }
+}
